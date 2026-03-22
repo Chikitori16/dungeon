@@ -1,0 +1,7 @@
+loots:
+  tier1_chest:
+    items:
+      - { item: "DIAMOND", weight: 0.5 }
+      - { item: "GOLD_INGOT", weight: 2.0 }
+      - { item: "mmoitem:CONSUMABLE:HPPOTION", weight: 1.5 }
+      - { item: "IRON_INGOT", weight: 5.0 }

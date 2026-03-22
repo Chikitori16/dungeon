@@ -1,0 +1,57 @@
+# ========================================================
+#            AeckDungeon - Hệ thống Hầm Ngục
+#         Phát triển cho máy chủ aeck.online
+# ========================================================
+
+# Cấu hình hệ thống Instance (Không gian hầm ngục)
+settings:
+  # Tên thế giới dùng để chứa các hầm ngục (Nên tạo một thế giới trống)
+  dungeon_world: "dungeon_world"
+  
+  # Khoảng cách giữa các hầm ngục để tránh người chơi nhìn thấy nhau (Block)
+  instance_distance: 2000
+  
+  # Thời gian đếm ngược trước khi dịch chuyển vào Dungeon (Giây)
+  start_countdown: 5
+  
+  # Tự động dọn dẹp Dungeon sau khi Party thoát hết (Giây)
+  cleanup_delay: 10
+
+# Cấu hình Party (Tổ đội)
+party:
+  # Số lượng thành viên tối đa trong một đội
+  max_size: 5
+  
+  # Khoảng cách tối đa giữa các thành viên để nhận Exp/Money (Block)
+  share_range: 50
+
+# Hệ thống Boss & Quái vật
+mobs:
+  # Tỉ lệ tăng chỉ số dựa trên số lượng người chơi (0.5 = 50% mỗi người thêm vào)
+  # Công thức: HP = Base * (1 + (Số người - 1) * 0.5)
+  scaling_factor: 0.5
+  
+  # Khoảng thời gian quái vật kiểm tra để tung Skill (Ticks: 20 ticks = 1 giây)
+  skill_check_interval: 40
+
+# Cấu hình thông báo (Messages)
+messages:
+  prefix: "&8[&d&lAeckDungeon&8] &f"
+  no_permission: "&cBạn không có quyền sử dụng lệnh này!"
+  not_leader: "&cChỉ có trưởng nhóm mới có thể bắt đầu hầm ngục!"
+  dungeon_started: "&aHầm ngục đang được khởi tạo, vui lòng đợi..."
+  dungeon_cleanup: "&eHầm ngục đã kết thúc, hệ thống đang dọn dẹp khu vực."
+  boss_spawned: "&4&l[BOSS] &c%boss_name% &7đã xuất hiện!"
+
+# Hệ thống lưu trữ dữ liệu (Dành cho Indexing)
+database:
+  # Sử dụng SQLite để lưu Cache tọa độ schematic (nhẹ và nhanh)
+  type: SQLITE
+  file: "dungeon_data/cache.db"
+
+# Tùy chỉnh hiệu ứng khi dán Schematic (FAWE)
+fawe:
+  # Có hiển thị hiệu ứng khói/lửa khi dán không?
+  visual_effects: true
+  # Tốc độ dán (Blocks mỗi tick) - Giảm xuống nếu server yếu
+  paste_speed: 10000

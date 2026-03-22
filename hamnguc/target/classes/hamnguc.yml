@@ -1,0 +1,12 @@
+hamnguc:
+  ancient_tomb:
+    display_name: "&6&lLăng Mộ Cổ Đại"
+    schematic: "tomb.schem"
+    hienthi: "WITHER_SKELETON_SKULL"
+    required_level: 20
+    # Cấu hình Boss của Dungeon này
+    boss:
+      id: "vua_xu_xuong"
+      spawn_location: "0,10,0" # Tọa độ tương đối trong schematic
+      boss_bar_color: "RED"
+      boss_bar_style: "SEGMENTED_10"
